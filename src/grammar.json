@@ -9340,6 +9340,14 @@
             },
             {
               "type": "PATTERN",
+              "value": "[sS][aA][fF][eE][sS][tT][aA][tT][eE]"
+            },
+            {
+              "type": "PATTERN",
+              "value": "[sS][aA][fF][eE][sS][tT][aA][tT][eE][aA][gG][aA][iI][nN]"
+            },
+            {
+              "type": "PATTERN",
               "value": "[sS][eE][aA][rR][cC][hH][wW][rR][aA][pP][pP][eE][dD]"
             },
             {
@@ -14119,3 +14127,4 @@
   "inline": [],
   "supertypes": []
 }
+

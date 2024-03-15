@@ -84,6 +84,8 @@ const EVENTS = [
   "RecordingEnter", // when starting to record a macro
   "RecordingLeave", // just before a macro stops recording
   "RemoteReply", // upon string reception from a remote vim
+  "SafeState", // When nothing is pending, going to wait for the user to type a character.
+  "SafeStateAgain", // Like SafeState but after processing any messages and invoking callbacks.
   "SearchWrapped", // after the search wrapped around
   "SessionLoadPost", // after loading a session file
   "ShellCmdPost", // after ":!cmd"
