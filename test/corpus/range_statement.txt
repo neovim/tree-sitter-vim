@@ -126,3 +126,14 @@ Range pattern with missing end
 (script_file
   (range_statement
     (pattern)))
+================================================================================
+Range pattern with a statement (for regressions)
+================================================================================
+
+/acall
+
+--------------------------------------------------------------------------------
+
+(script_file
+  (range_statement
+    (pattern)))
