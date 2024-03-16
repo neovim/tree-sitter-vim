@@ -1907,27 +1907,54 @@
       ]
     },
     "lua_statement": {
-      "type": "SEQ",
+      "type": "CHOICE",
       "members": [
         {
-          "type": "ALIAS",
-          "content": {
-            "type": "SYMBOL",
-            "name": "_lua"
-          },
-          "named": false,
-          "value": "lua"
-        },
-        {
-          "type": "CHOICE",
+          "type": "SEQ",
           "members": [
             {
-              "type": "SYMBOL",
-              "name": "chunk"
+              "type": "ALIAS",
+              "content": {
+                "type": "SYMBOL",
+                "name": "_lua"
+              },
+              "named": false,
+              "value": "lua"
             },
             {
-              "type": "SYMBOL",
-              "name": "script"
+              "type": "CHOICE",
+              "members": [
+                {
+                  "type": "SYMBOL",
+                  "name": "chunk"
+                },
+                {
+                  "type": "SYMBOL",
+                  "name": "script"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "SEQ",
+          "members": [
+            {
+              "type": "STRING",
+              "value": "="
+            },
+            {
+              "type": "CHOICE",
+              "members": [
+                {
+                  "type": "SYMBOL",
+                  "name": "chunk"
+                },
+                {
+                  "type": "SYMBOL",
+                  "name": "script"
+                }
+              ]
             }
           ]
         }
@@ -14119,3 +14146,4 @@
   "inline": [],
   "supertypes": []
 }
+

@@ -307,7 +307,11 @@ module.exports = grammar({
     colorscheme_statement: ($) =>
       command($, "colorscheme", optional(alias($.filename, $.name))),
 
-    lua_statement: ($) => command($, "lua", choice($.chunk, $.script)),
+    lua_statement: ($) =>
+      choice(
+        command($, "lua", choice($.chunk, $.script)),
+        seq("=", choice($.chunk, $.script))
+      ),
     ruby_statement: ($) => command($, "ruby", choice($.chunk, $.script)),
     python_statement: ($) => command($, "python", choice($.chunk, $.script)),
     perl_statement: ($) => command($, "perl", choice($.chunk, $.script)),
