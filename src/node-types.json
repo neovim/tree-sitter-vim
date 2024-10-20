@@ -7091,6 +7091,7 @@
   {
     "type": "script_file",
     "named": true,
+    "root": true,
     "fields": {},
     "children": {
       "multiple": true,
@@ -10746,10 +10747,6 @@
     "named": false
   },
   {
-    "type": "dos",
-    "named": false
-  },
-  {
     "type": "drop",
     "named": false
   },
@@ -10891,10 +10888,6 @@
   },
   {
     "type": "file",
-    "named": false
-  },
-  {
-    "type": "file",
     "named": true
   },
   {
@@ -10915,11 +10908,11 @@
   },
   {
     "type": "filetype",
-    "named": true
+    "named": false
   },
   {
     "type": "filetype",
-    "named": false
+    "named": true
   },
   {
     "type": "finally",
@@ -11095,11 +11088,11 @@
   },
   {
     "type": "keyword",
-    "named": false
+    "named": true
   },
   {
     "type": "keyword",
-    "named": true
+    "named": false
   },
   {
     "type": "koi8",
@@ -11179,10 +11172,6 @@
   },
   {
     "type": "lua",
-    "named": false
-  },
-  {
-    "type": "mac",
     "named": false
   },
   {
@@ -11635,10 +11624,6 @@
   },
   {
     "type": "unicode",
-    "named": false
-  },
-  {
-    "type": "unix",
     "named": false
   },
   {

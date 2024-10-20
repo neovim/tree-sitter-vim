@@ -33,21 +33,17 @@ jobs:
           # windows-latest
           - macos-14
     steps:
-      - name: Set up repository
-        uses: tree-sitter/parser-setup-action@v1.1
-        with:
-          node-version: ${{vars.NODE_VERSION}}
-      - name: Clone neovim runtime
+      - name: Checkout repository
         uses: actions/checkout@v4
+      - name: Set up tree-sitter
+        uses: tree-sitter/setup-action/cli@v1
+      - name: Run parser tests
+        uses: tree-sitter/parser-test-action@v2
+      - name: Parse sample files
+        uses: tree-sitter/parse-action@v4
+        id: parse-files
         with:
-          repository: neovim/neovim
-          path: .tests/neovim
-          sparse-checkout: runtime/
-      - name: Run tests
-        uses: tree-sitter/parser-test-action@v1.2
-        with:
-          lint: true
-          corpus-files: |-
+          files: |-
             .tests/neovim/runtime/**/*.vim
             !.tests/neovim/runtime/autoload/ada.vim
             !.tests/neovim/runtime/autoload/adacomplete.vim
@@ -110,3 +106,9 @@ jobs:
             !.tests/neovim/runtime/pack/dist/opt/termdebug/plugin/termdebug.vim
             !.tests/neovim/runtime/plugin/shada.vim
             !.tests/neovim/runtime/syntax/**/*.vim
+      - name: Upload failures artifact
+        uses: actions/upload-artifact@v4
+        if: "!cancelled() && steps.parse-files.outcome == 'failure'"
+        with:
+          name: failures-${{runner.os}}
+          path: ${{steps.parse-files.outputs.failures}}

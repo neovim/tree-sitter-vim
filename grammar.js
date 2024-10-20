@@ -1,4 +1,5 @@
 /// <reference types="tree-sitter-cli/dsl" />
+
 const {
   key_val_arg,
   maybe_bang,

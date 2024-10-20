@@ -13,8 +13,18 @@
         "src/parser.c",
         "src/scanner.c",
       ],
-      "cflags_c": [
-        "-std=c11",
+      "conditions": [
+        ["OS!='win'", {
+          "cflags_c": [
+            "-std=c11",
+            "-Wno-stringop-truncation",
+          ],
+        }, { # OS == "win"
+          "cflags_c": [
+            "/std:c11",
+            "/utf-8",
+          ],
+        }],
       ],
     }
   ]

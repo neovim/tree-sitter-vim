@@ -2,11 +2,14 @@ name: Fuzz parser
 
 on:
   push:
+    branches: [master]
     paths:
       - src/scanner.c
+      - src/keywords.h
   pull_request:
     paths:
       - src/scanner.c
+      - src/keywords.h
 
 jobs:
   fuzz:

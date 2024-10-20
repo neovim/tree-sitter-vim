@@ -1,4 +1,3 @@
-
 # tree-sitter-vim
 
 [![CI][ci]](https://github.com/tree-sitter-grammars/tree-sitter-vim/actions/workflows/ci.yaml)
